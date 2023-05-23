@@ -15,11 +15,13 @@
 
     <ImageView
         android:id="@+id/huevo"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="139dp"
-        android:src="@drawable/salto1" />
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="118dp"
+        />
 
     <Button
         android:id="@+id/btn"
