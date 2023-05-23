@@ -8,7 +8,14 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-
+/*Proyeto #1 de Desarrollo Movile
+*Desarrollado por:
+* Miguel Vivas
+* Daniela Moscoso
+* Benjamín Rodríguez
+* César Mancilla
+*
+ * */
 
 public class MainActivity extends AppCompatActivity {
     public int typeanimation;
