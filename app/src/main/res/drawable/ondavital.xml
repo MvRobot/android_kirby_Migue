@@ -16,4 +16,5 @@
     <item android:drawable="@drawable/k13" android:duration="100"/>
     <item android:drawable="@drawable/k14" android:duration="100"/>
     <item android:drawable="@drawable/k15" android:duration="100"/>
+    <item android:drawable="@drawable/k1" android:duration="100"/>
 </animation-list>
