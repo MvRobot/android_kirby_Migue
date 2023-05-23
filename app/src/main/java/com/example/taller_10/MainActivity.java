@@ -1,32 +1,21 @@
 package com.example.taller_10;
 
-import static kotlinx.coroutines.DelayKt.delay;
-
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.animation.ObjectAnimator;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.SystemClock;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import java.util.concurrent.TimeUnit;
-
 
 public class MainActivity extends AppCompatActivity {
-    ObjectAnimator wait;
-    private int cont, typeanimation;
-    private Button btn1;
-    private ImageView huevo;
-    private Animation jump_anim;
-    private AnimationDrawable prejump_anim;
+    public int typeanimation;
+    public Button btn1;
+    public ImageView huevo;
+    public Animation jump_anim;
+    public AnimationDrawable prejump_anim, kameha_anim;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,30 +27,49 @@ public class MainActivity extends AppCompatActivity {
         huevo = (ImageView) findViewById(R.id.huevo);
 
         jump_anim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.kirby_jump);
+
         huevo.setBackgroundResource(R.drawable.prejump);
         prejump_anim = (AnimationDrawable) huevo.getBackground();
 
-
-
-        cont = 0;
         typeanimation = 1;
+
+
 
 
         btn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
-                typeanimation = 2;
-                //huevo.setImageResource(R.drawable.salto1);
-
+                if (typeanimation == 1) {
+                    huevo.setBackgroundResource(0);
+                    huevo.setBackgroundResource(R.drawable.ondavital);
+                    kameha_anim = (AnimationDrawable) huevo.getBackground();
+                    typeanimation = 2;
+                }
+                else if (typeanimation == 2){
+                    huevo.setBackgroundResource(0);
+                    huevo.setBackgroundResource(R.drawable.prejump);
+                    prejump_anim = (AnimationDrawable) huevo.getBackground();
+                    typeanimation = 1;
+                }
             }
 
         });
         huevo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                prejump_anim.stop();
-                prejump_anim.start();
-                huevo.startAnimation(jump_anim);
+
+                if (typeanimation == 1) {
+                    jump_anim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.kirby_jump);
+
+                    prejump_anim.stop();
+                    prejump_anim.start();
+
+                    huevo.startAnimation(jump_anim);
+                }
+                else if (typeanimation == 2) {
+                    kameha_anim.stop();
+                    kameha_anim.start();
+                }
             }
         });
 
