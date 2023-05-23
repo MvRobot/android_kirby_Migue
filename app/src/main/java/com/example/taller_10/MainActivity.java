@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     public int typeanimation;
     public Button btn1;
     public ImageView huevo;
-    public Animation jump_anim;
+    public Animation jump_anim, backfire_anim;
     public AnimationDrawable prejump_anim, kameha_anim;
 
     @Override
@@ -74,8 +74,12 @@ public class MainActivity extends AppCompatActivity {
                     huevo.startAnimation(jump_anim);
                 }
                 else if (typeanimation == 2) {
+                    backfire_anim = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.backfire);
+
                     kameha_anim.stop();
                     kameha_anim.start();
+
+                    huevo.startAnimation(backfire_anim);
                 }
             }
         });
