@@ -14,7 +14,7 @@ import android.widget.ImageView;
 * Daniela Moscoso
 * Benjamín Rodríguez
 * César Mancilla
-*
+*Carlos Zheng
  * */
 
 public class MainActivity extends AppCompatActivity {
